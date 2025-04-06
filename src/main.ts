@@ -11,6 +11,8 @@ const enumerateDevices = async (into: Element) => {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
+  document.querySelector<HTMLElement>("#location")!.innerText = location.href;
+
   //This requests permission and ensures we can actually enumerate devices.
   document.querySelector<HTMLVideoElement>("#stream")!.srcObject =
     await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
